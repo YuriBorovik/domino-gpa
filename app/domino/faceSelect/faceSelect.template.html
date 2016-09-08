@@ -1,0 +1,21 @@
+<div flex-container="column">
+    <div ng-if="$ctrl.selectingTop">
+        <h2 class="header text-center">Choose top part:</h2>
+        <domino-brick face-only="true" face-up="one" ng-click="$ctrl.selectTop('one')"></domino-brick>
+        <domino-brick face-only="true" face-up="two" ng-click="$ctrl.selectTop('two')"></domino-brick>
+        <domino-brick face-only="true" face-up="three" ng-click="$ctrl.selectTop('three')"></domino-brick>
+        <domino-brick face-only="true" face-up="four" ng-click="$ctrl.selectTop('four')"></domino-brick>
+        <domino-brick face-only="true" face-up="five" ng-click="$ctrl.selectTop('five')"></domino-brick>
+        <domino-brick face-only="true" face-up="six" ng-click="$ctrl.selectTop('six')"></domino-brick>
+    </div>
+    <div ng-if="$ctrl.selectingBottom">
+        <h2 class="header text-center">Choose bottom part:</h2>
+        <domino-brick face-only="true" face-up="one" ng-click="$ctrl.selectBottom('one')"></domino-brick>
+        <domino-brick face-only="true" face-up="two" ng-click="$ctrl.selectBottom('two')"></domino-brick>
+        <domino-brick face-only="true" face-up="three" ng-click="$ctrl.selectBottom('three')"></domino-brick>
+        <domino-brick face-only="true" face-up="four" ng-click="$ctrl.selectBottom('four')"></domino-brick>
+        <domino-brick face-only="true" face-up="five" ng-click="$ctrl.selectBottom('five')"></domino-brick>
+        <domino-brick face-only="true" face-up="six" ng-click="$ctrl.selectBottom('six')"></domino-brick>
+    </div>
+</div>
+

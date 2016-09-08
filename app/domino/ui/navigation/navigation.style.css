@@ -1,0 +1,10 @@
+domino-navigation {
+	display:block;
+	margin: 0 0 16px 0;
+	}
+#rotate-left {
+	transform: translate(172px, 380px);
+	}
+#rotate-right {
+	transform: translate(188px, 380px) rotateY(-180deg);
+	}

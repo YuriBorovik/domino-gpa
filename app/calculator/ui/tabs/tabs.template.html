@@ -1,0 +1,38 @@
+<calculator-header average-gpa="$ctrl.averageGpa" flex-item></calculator-header>
+<div ng-if="!$ctrl.currentGrade">Please add grade:</div>
+<div flex-container="row">
+    <div class="tab" ng-class="{active:$ctrl.selectedTab==grade.id}" flex-item ng-repeat="grade in $ctrl.grades track by grade.id">
+
+        <div flex-container="row">
+            <div flex-item="10" ng-click="$ctrl.selectTab(grade)">Grade {{ grade.title }} </div>
+            <div flex-item="2" class="tab-remove"><span ng-click="$ctrl.removeGrade(grade)">&#10006;</span></div>
+        </div>
+
+    </div>
+    <div class="tab-add text-center" flex-item="1" ng-class="{empty:!$ctrl.currentGrade}">
+        <button class="btn" ng-click="$ctrl.addGrade()">+</button>
+    </div>
+</div>
+<div class="tab-inner" flex-container="column" flex-between ng-class="{hidden:$ctrl.selectedTab!=$ctrl.currentGrade.id}">
+    <div flex-container="row" class="p">
+        <div flex-item="1"><span>Grade</span></div>
+        <div flex-item="1"><input type="text" ng-model="$ctrl.currentGrade.title" class="tab-title-input"></div>
+    </div>
+
+
+    <div ui-grid="{data:$ctrl.currentGrade.students, columnDefs:$ctrl.gridOptions.columnDefs,enableHorizontalScrollbar:0,enableVerticalScrollbar:2,infiniteScrollRowsFromEnd: 10,rowHeight:40}"
+         class="myGrid" ui-grid-infinite-scroll></div>
+
+</div>
+<div flex-container="row" flex-between flex-gutter class="p tab-add-student" ng-if="$ctrl.grades.length>0">
+    <div flex-item="6"><input type="text" ng-model="$ctrl.student.name" placeholder="Name"></div>
+    <div flex-item="2"><input type="number" ng-model="$ctrl.student.gpa" placeholder="GPA"></div>
+    <div flex-item="2" class="text-right">
+        <button class="btn" ng-click="$ctrl.addStudent($ctrl.currentGrade,$ctrl.student)">Add</button>
+    </div>
+</div>
+
+
+
+
+

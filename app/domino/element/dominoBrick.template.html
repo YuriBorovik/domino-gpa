@@ -1,0 +1,106 @@
+<div>
+    <div class="face-one" ng-if="$ctrl.faceUp=='one'">
+        <span class="dot"></span>
+    </div>
+    <div class="face-two" ng-if="$ctrl.faceUp=='two'">
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <div class="face-three" ng-if="$ctrl.faceUp=='three'">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <div class="face-four" ng-if="$ctrl.faceUp=='four'">
+        <div class="line">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <div class="line">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="face-five" ng-if="$ctrl.faceUp=='five'">
+        <div class="line">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="line">
+            <span class="dot"></span>
+        </div>
+        <div class="line">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="face-six" ng-if="$ctrl.faceUp=='six'">
+        <div class="line">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="line">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <div ng-if="!$ctrl.faceOnly">
+        <hr>
+        <div class="face-one" ng-if="$ctrl.faceDown=='one'">
+            <span class="dot"></span>
+        </div>
+        <div class="face-two" ng-if="$ctrl.faceDown=='two'">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="face-three" ng-if="$ctrl.faceDown=='three'">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="face-four" ng-if="$ctrl.faceDown=='four'">
+            <div class="line">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="line">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="face-five" ng-if="$ctrl.faceDown=='five'">
+            <div class="line">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="line">
+                <span class="dot"></span>
+            </div>
+            <div class="line">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="face-six" ng-if="$ctrl.faceDown=='six'">
+            <div class="line">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="line">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

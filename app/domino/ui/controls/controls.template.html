@@ -1,0 +1,21 @@
+<div flex-container="column" flex-item>
+    <div flex-item flex-container="row">
+        <label for="size" flex-item="4">size - {{ $ctrl.size|number }}%</label>
+        <input type="range" id="size" flex-item="8"
+               ng-model="$ctrl.size"
+               ng-change="$ctrl.changeSize()"
+               step="1"
+               max="130"
+               min="50">
+    </div>
+    <div flex-item flex-container="row" class="mt">
+        <label for="speed" flex-item="4">speed - {{ $ctrl.speed|parseSpeed }} {{ $ctrl.speed>-100?'ms':'s'
+                                         }}</label>
+        <input type="range" id="speed" flex-item="8"
+               ng-model="$ctrl.speed"
+               ng-change="$ctrl.changeSpeed()"
+               step="1"
+               max="0"
+               min="-130">
+    </div>
+</div>

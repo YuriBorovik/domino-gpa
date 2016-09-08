@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <base href="/">
+</head>
+<body>
+<main-menu></main-menu>
+
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+                                                                                                                    your
+                                                                                                                    browser</a>
+                       to improve your experience.</p>
+<![endif]-->
+
+<ui-view></ui-view>
+
+
+<script type="text/javascript">
+    var styles = function () {
+        var css = [
+            'bower_components/html5-boilerplate/dist/css/normalize.css',
+            'bower_components/html5-boilerplate/dist/css/main.css',
+            'bower_components/angular-ui-grid/ui-grid.min.css',
+            'app.css',
+            'shared/ui/mainMenu/mainMenu.style.css',
+            'domino/ui/navigation/navigation.style.css',
+            'domino/ui/controls/controls.style.css',
+            'domino/element/dominoBrick.style.css',
+            'domino/faceSelect/faceSelect.style.css',
+            'calculator/ui/header/header.style.css',
+            'calculator/ui/tabs/tabs.style.css',
+        ];
+
+        var i = 0, cssLength = css.length;
+        for (; i < cssLength; i++) {
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.async = true;
+            l.href = css[i];
+            var h = document.getElementsByTagName('head')[0];
+            h.appendChild(l);
+        }
+    }
+    var scripts = function () {
+        var js = [
+            'bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js',
+            'bower_components/angular/angular.min.js',
+            'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+            'bower_components/angular-ui-grid/ui-grid.min.js',
+            'app.js',
+            'shared/ui/mainMenu/mainMenu.component.js',
+            'domino/domino.module.js',
+            'domino/ui/navigation/navigation.component.js',
+            'domino/ui/controls/controls.component.js',
+            'domino/element/dominoBrick.component.js',
+            'domino/faceSelect/faceSelect.component.js',
+            'calculator/calculator.module.js',
+            'calculator/grades.service.js',
+            'calculator/ui/header/header.component.js',
+            'calculator/ui/tabs/tabs.component.js',
+            'bootstrap.js'
+        ];
+
+        var i = 0, jsLength = js.length;
+        for (; i < jsLength; i++) {
+            var l = document.createElement('script');
+            l.type = 'text/javascript';
+            l.async = false;
+            l.src = js[i];
+            l.defer = true;
+            document.body.appendChild(l);
+        }
+
+    }
+
+    var resources = function () {
+        styles();
+        scripts();
+
+    }
+
+    var raf = window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (callback, element) {
+                window.setTimeout(callback, 1000 / 60);
+            };
+    if (raf) {
+        raf(resources);
+    }
+    else {
+        window.addEventListener('load', resources);
+    }
+</script>
+</body>
+</html>

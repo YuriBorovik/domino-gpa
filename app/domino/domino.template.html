@@ -1,0 +1,21 @@
+<article class="container" flex-container="row">
+    <section flex-item="4" class="p">
+        <domino-navigation on-c="Domino.controls.rotateClockwise()" on-cc="Domino.controls.rotateCounterClockwise()"
+                           on-new="Domino.dominos.newDomino()"></domino-navigation>
+        <main class="wrapper">
+            <domino-brick face-only="false" face-up="{{Domino.dominos.faceUp  }}"
+                          face-down="{{Domino.dominos.faceDown }}"
+                          size="Domino.size"
+                          ng-style="{'transform':'scale('+Domino.controls.size+') rotateZ('+Domino.controls.rotation+'deg)', 'transition-duration':''+Domino.controls.speed+'s'}"></domino-brick>
+        </main>
+        <domino-controls size="Domino.controls.size*100" speed="Domino.controls.speed*100"
+                         on-size="Domino.controls.changeSize(size)"
+                         on-speed="Domino.controls.changeSpeed(speed)"></domino-controls>
+    </section>
+    <aside flex-item="4" class="p">
+        <domino-face-select on-top-select="Domino.dominos.selectTopFace(top)"
+                            on-bottom-select="Domino.dominos.selectBottomFace(bottom)"
+                            selecting-top="Domino.dominos.isSelectTop"
+                            selecting-bottom="Domino.dominos.isSelectBottom"></domino-face-select>
+    </aside>
+</article>
